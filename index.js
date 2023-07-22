@@ -14,6 +14,11 @@ app.use('/auth', authRoutes);
 app.use('/repos', repoRoutes);
 app.use('/files', fileRoutes);
 
+app.get("/",(req,res)=>{
+
+  res.send("Welcome to the Server")
+})
+
 app.listen(process.env.port, async () => {
   await connection;
   console.log("Server started");
