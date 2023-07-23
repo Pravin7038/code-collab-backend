@@ -4,10 +4,12 @@ const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
 const repoRoutes = require('./routes/repoRoutes');
 const fileRoutes = require('./routes/fileRoutes');
-
+const cors = require("cors")
 const app = express();
 // Parse incoming requests
+app.use(cors())
 app.use(bodyParser.json());
+
 
 // Routes
 app.use('/auth', authRoutes);
